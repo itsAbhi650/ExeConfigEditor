@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -100,11 +101,44 @@ namespace ExeConfigEditor
 
         public override bool IsReadOnly => false;
 
-        public override Type PropertyType => _dictionary[_key].GetType();
+        public override Type PropertyType
+        {
+            get
+            {
+                string ValueString = _dictionary[_key].ToString();
+                if (bool.TryParse(ValueString.ToLower(), out _))
+                {
+                    return typeof(bool);
+                }
+                else if (int.TryParse(ValueString, out _))
+                {
+                    return typeof(int);
+                }
+                else if (float.TryParse(ValueString, out _))
+                {
+                    return typeof(float);
+                }
+                else if (TimeSpan.TryParse(ValueString, out _))
+                {
+                    return typeof(TimeSpan);
+                }
+                else if(DateTime.TryParse(ValueString, out _))
+                {
+                    return typeof(DateTime);
+                }
+                else
+                {
+                    return _dictionary[_key].GetType();
+                }
+            }
+        }
 
         public override bool CanResetValue(object component) => false;
 
-        public override object GetValue(object component) => _dictionary[_key];
+        public override object GetValue(object component)
+        {
+            return _dictionary[_key];
+        }
 
         public override void ResetValue(object component) { }
 
