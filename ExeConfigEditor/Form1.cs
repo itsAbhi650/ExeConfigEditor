@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Drawing;
 using System.Windows.Forms;
 using System.Xml;
 
@@ -9,12 +10,12 @@ namespace ExeConfigEditor
 {
     public partial class Form1 : Form
     {
-        Dictionary<string, string> Configurations = new Dictionary<string, string>();
+        Dictionary<string, object> Configurations = new Dictionary<string, object>();
         XmlDocument XDOC = new XmlDocument();
         XmlNodeList ConfigNodeList;
         XmlNode SelectedNode;
         string SelectedSettings;
-        //Lost
+
         public Form1()
         {
             InitializeComponent();
@@ -22,13 +23,25 @@ namespace ExeConfigEditor
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
         {
-            GetNodeByKey(e.ChangedItem.Label, ConfigNodeList).Attributes[1].Value = e.ChangedItem.Value.ToString();
+            string NewVal;
+            string OldVal;
+            if (e.ChangedItem.Value is Color ColorObj)
+            {
+                OldVal = ((Color)e.OldValue).Name;
+                NewVal = ColorObj.Name;
+            }
+            else
+            {
+                OldVal = e.OldValue.ToString();
+                NewVal = e.ChangedItem.Value.ToString();
+            }
+            GetNodeByKey(e.ChangedItem.Label, ConfigNodeList).Attributes[1].Value = NewVal;
             string Log =
                        "EDIT NODE" + Environment.NewLine +
                        "=========================" + Environment.NewLine +
                        "*Key: " + e.ChangedItem.Label + Environment.NewLine +
-                       "*Old Value: " + e.OldValue.ToString() + Environment.NewLine +
-                       "*New Value: " + e.ChangedItem.Value.ToString() + Environment.NewLine +
+                       "*Old Value: " + OldVal + Environment.NewLine +
+                       "*New Value: " + NewVal + Environment.NewLine +
                        "--------------------------------------------------" + Environment.NewLine;
             TbLog.AppendText(Log);
         }
@@ -161,7 +174,6 @@ namespace ExeConfigEditor
                                 break;
                         }
                         string Log =
-
                             "ADD NODE" + Environment.NewLine +
                             "=========================" + Environment.NewLine +
                             "*Key: " + AD.Key + Environment.NewLine +

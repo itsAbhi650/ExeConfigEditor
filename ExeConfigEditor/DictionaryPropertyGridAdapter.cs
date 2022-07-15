@@ -1,11 +1,8 @@
 ﻿using System;
+using System.Drawing;
 using System.Collections;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace ExeConfigEditor
 {
@@ -126,6 +123,11 @@ namespace ExeConfigEditor
                 {
                     return typeof(DateTime);
                 }
+                else if (Color.FromName(ValueString).IsKnownColor)
+                {
+                    _dictionary[_key] = Color.FromName(ValueString);
+                    return typeof(Color);
+                }
                 else
                 {
                     return _dictionary[_key].GetType();
@@ -145,6 +147,5 @@ namespace ExeConfigEditor
         public override void SetValue(object component, object value) => _dictionary[_key] = value;
 
         public override bool ShouldSerializeValue(object component) => false;
-
     }
 }

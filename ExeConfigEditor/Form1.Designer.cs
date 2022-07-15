@@ -49,7 +49,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel6 = new System.Windows.Forms.Panel();
             this.RbUserSettings = new System.Windows.Forms.RadioButton();
@@ -73,16 +72,19 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 26);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(540, 21);
+            this.panel1.Size = new System.Drawing.Size(578, 15);
             this.panel1.TabIndex = 0;
             // 
             // textBox1
             // 
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.textBox1.Font = new System.Drawing.Font("Consolas", 10F);
             this.textBox1.Location = new System.Drawing.Point(76, 0);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(0);
             this.textBox1.Name = "textBox1";
             this.textBox1.ReadOnly = true;
-            this.textBox1.Size = new System.Drawing.Size(464, 20);
+            this.textBox1.Size = new System.Drawing.Size(502, 16);
             this.textBox1.TabIndex = 1;
             // 
             // label1
@@ -90,7 +92,7 @@
             this.label1.Dock = System.Windows.Forms.DockStyle.Left;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(76, 21);
+            this.label1.Size = new System.Drawing.Size(76, 15);
             this.label1.TabIndex = 2;
             this.label1.Text = "Loaded Config";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -103,7 +105,7 @@
             this.TbLog.Multiline = true;
             this.TbLog.Name = "TbLog";
             this.TbLog.ReadOnly = true;
-            this.TbLog.Size = new System.Drawing.Size(290, 420);
+            this.TbLog.Size = new System.Drawing.Size(262, 448);
             this.TbLog.TabIndex = 3;
             // 
             // propertyGrid1
@@ -114,7 +116,7 @@
             this.propertyGrid1.Location = new System.Drawing.Point(0, 26);
             this.propertyGrid1.Name = "propertyGrid1";
             this.propertyGrid1.PropertySort = System.Windows.Forms.PropertySort.NoSort;
-            this.propertyGrid1.Size = new System.Drawing.Size(247, 387);
+            this.propertyGrid1.Size = new System.Drawing.Size(313, 415);
             this.propertyGrid1.TabIndex = 4;
             this.propertyGrid1.ToolbarVisible = false;
             this.propertyGrid1.PropertyValueChanged += new System.Windows.Forms.PropertyValueChangedEventHandler(this.propertyGrid1_PropertyValueChanged);
@@ -125,9 +127,9 @@
             this.panel3.Controls.Add(this.TbLog);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(250, 49);
+            this.panel3.Location = new System.Drawing.Point(316, 43);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(290, 446);
+            this.panel3.Size = new System.Drawing.Size(262, 474);
             this.panel3.TabIndex = 5;
             // 
             // panel4
@@ -136,7 +138,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(290, 26);
+            this.panel4.Size = new System.Drawing.Size(262, 26);
             this.panel4.TabIndex = 4;
             // 
             // button3
@@ -158,7 +160,7 @@
             this.helpToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(540, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(578, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -232,38 +234,27 @@
             this.label2.Dock = System.Windows.Forms.DockStyle.Top;
             this.label2.Location = new System.Drawing.Point(0, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(540, 2);
+            this.label2.Size = new System.Drawing.Size(578, 2);
             this.label2.TabIndex = 8;
             // 
             // label3
             // 
             this.label3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.label3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label3.Location = new System.Drawing.Point(0, 47);
+            this.label3.Location = new System.Drawing.Point(0, 41);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(540, 2);
+            this.label3.Size = new System.Drawing.Size(578, 2);
             this.label3.TabIndex = 9;
             // 
             // splitter1
             // 
             this.splitter1.BackColor = System.Drawing.SystemColors.Control;
             this.splitter1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitter1.Location = new System.Drawing.Point(247, 49);
+            this.splitter1.Location = new System.Drawing.Point(313, 43);
             this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 446);
+            this.splitter1.Size = new System.Drawing.Size(3, 474);
             this.splitter1.TabIndex = 10;
             this.splitter1.TabStop = false;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible;
-            this.statusStrip1.Location = new System.Drawing.Point(0, 495);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.statusStrip1.Size = new System.Drawing.Size(540, 22);
-            this.statusStrip1.SizingGrip = false;
-            this.statusStrip1.TabIndex = 11;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // panel2
             // 
@@ -271,9 +262,9 @@
             this.panel2.Controls.Add(this.panel6);
             this.panel2.Controls.Add(this.panel5);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 49);
+            this.panel2.Location = new System.Drawing.Point(0, 43);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(247, 446);
+            this.panel2.Size = new System.Drawing.Size(313, 474);
             this.panel2.TabIndex = 12;
             // 
             // panel6
@@ -283,14 +274,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(247, 26);
+            this.panel6.Size = new System.Drawing.Size(313, 26);
             this.panel6.TabIndex = 6;
             // 
             // RbUserSettings
             // 
             this.RbUserSettings.AutoSize = true;
             this.RbUserSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.RbUserSettings.Location = new System.Drawing.Point(159, 0);
+            this.RbUserSettings.Location = new System.Drawing.Point(225, 0);
             this.RbUserSettings.Name = "RbUserSettings";
             this.RbUserSettings.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
             this.RbUserSettings.Size = new System.Drawing.Size(88, 26);
@@ -319,15 +310,15 @@
             this.panel5.Controls.Add(this.BtnDelete);
             this.panel5.Controls.Add(this.BtnAdd);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel5.Location = new System.Drawing.Point(0, 413);
+            this.panel5.Location = new System.Drawing.Point(0, 441);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(247, 33);
+            this.panel5.Size = new System.Drawing.Size(313, 33);
             this.panel5.TabIndex = 5;
             // 
             // BtnDelete
             // 
             this.BtnDelete.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnDelete.Location = new System.Drawing.Point(166, 5);
+            this.BtnDelete.Location = new System.Drawing.Point(232, 5);
             this.BtnDelete.Name = "BtnDelete";
             this.BtnDelete.Size = new System.Drawing.Size(75, 23);
             this.BtnDelete.TabIndex = 1;
@@ -349,12 +340,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 517);
+            this.ClientSize = new System.Drawing.Size(578, 517);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.splitter1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.menuStrip1);
@@ -403,7 +393,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Splitter splitter1;
-        private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtnDelete;
