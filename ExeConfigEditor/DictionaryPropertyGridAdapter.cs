@@ -137,10 +137,7 @@ namespace ExeConfigEditor
 
         public override bool CanResetValue(object component) => false;
 
-        public override object GetValue(object component)
-        {
-            return _dictionary[_key];
-        }
+        public override object GetValue(object component) => _dictionary[_key];
 
         public override void ResetValue(object component) { }
 

@@ -63,7 +63,21 @@ namespace ExeConfigEditor
             if (rbtn.Checked)
             {
                 NodeAddMode = (AddMode)Convert.ToInt32(rbtn.Tag);
-                PnlInsertPanel.Enabled = NodeAddMode == AddMode.Insert;
+                if (NodeAddMode != AddMode.Insert)
+                {
+                    if (PnlInsertPanel.Visible)
+                    {
+                        PnlInsertPanel.Visible = false;
+                        groupBox1.Height -= PnlInsertPanel.Height;
+                        Height -= PnlInsertPanel.Height;
+                    }
+                }
+                else
+                {
+                    Height += PnlInsertPanel.Height;
+                    groupBox1.Height += PnlInsertPanel.Height;
+                    PnlInsertPanel.Visible = true;
+                }
             }
         }
 

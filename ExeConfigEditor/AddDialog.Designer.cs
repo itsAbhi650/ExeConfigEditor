@@ -105,8 +105,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(229, 80);
             this.panel1.TabIndex = 5;
-            //this.panel1.MouseEnter += new System.EventHandler(this.AddDialog_MouseEnter);
-            //this.panel1.MouseLeave += new System.EventHandler(this.AddDialog_MouseLeave);
             // 
             // groupBox1
             // 
@@ -141,13 +139,10 @@
             this.PnlInsertPanel.Controls.Add(this.RbBefore);
             this.PnlInsertPanel.Controls.Add(this.RbInsertAfter);
             this.PnlInsertPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PnlInsertPanel.Enabled = false;
             this.PnlInsertPanel.Location = new System.Drawing.Point(3, 44);
             this.PnlInsertPanel.Name = "PnlInsertPanel";
             this.PnlInsertPanel.Size = new System.Drawing.Size(223, 46);
             this.PnlInsertPanel.TabIndex = 2;
-            //this.PnlInsertPanel.MouseEnter += new System.EventHandler(this.AddDialog_MouseEnter);
-            //this.PnlInsertPanel.MouseLeave += new System.EventHandler(this.AddDialog_MouseLeave);
             // 
             // CmbBxConfigValues
             // 
@@ -251,8 +246,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add Node";
             this.Load += new System.EventHandler(this.AddDialog_Load);
-            //this.MouseEnter += new System.EventHandler(this.AddDialog_MouseEnter);
-            //this.MouseLeave += new System.EventHandler(this.AddDialog_MouseLeave);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);

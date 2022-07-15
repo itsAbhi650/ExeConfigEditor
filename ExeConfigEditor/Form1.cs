@@ -87,6 +87,7 @@ namespace ExeConfigEditor
         private void LoadSettingIntl(XmlNodeList NodeList)
         {
             Configurations.Clear();
+            propertyGrid1.SelectedObject = null;
             if (NodeList.Count > 0)
             {
                 foreach (XmlNode node in NodeList[0])
@@ -141,7 +142,7 @@ namespace ExeConfigEditor
 
         private void BtnAdd_Click(object sender, EventArgs e)
         {
-            if (ConfigNodeList!=null && ConfigNodeList[0].ChildNodes.Count > 0)
+            if (ConfigNodeList != null && ConfigNodeList[0].ChildNodes.Count > 0)
             {
                 bool isInsert = false;
                 using (AddDialog AD = new AddDialog() { Configs = Configurations.Keys.ToArray() })
@@ -154,9 +155,11 @@ namespace ExeConfigEditor
                         switch (AD.NodeAddMode)
                         {
                             case AddMode.Prepend:
+                                isInsert = false;
                                 ConfigNodeList[0].PrependChild(Node);
                                 break;
                             case AddMode.Append:
+                                isInsert = false;
                                 ConfigNodeList[0].AppendChild(Node);
                                 break;
                             case AddMode.Insert:
