@@ -10,6 +10,7 @@ namespace ExeConfigEditor
 {
     public partial class Form1 : Form
     {
+        string[] args = Environment.GetCommandLineArgs().Skip(1).ToArray();
         Dictionary<string, object> Configurations = new Dictionary<string, object>();
         XmlDocument XDOC = new XmlDocument();
         XmlNodeList ConfigNodeList;
@@ -19,6 +20,10 @@ namespace ExeConfigEditor
         public Form1()
         {
             InitializeComponent();
+            if (args.Count()>0)
+            {
+                LoadDocument(args[0]);
+            }
         }
 
         private void propertyGrid1_PropertyValueChanged(object s, PropertyValueChangedEventArgs e)
@@ -52,13 +57,17 @@ namespace ExeConfigEditor
             {
                 if (OFD.ShowDialog() == DialogResult.OK)
                 {
-                    textBox1.Text = OFD.FileName;
-                    using (var Fstream = new FileInfo(OFD.FileName).OpenRead())
-                    {
-
-                        XDOC.Load(Fstream);
-                    }
+                    LoadDocument(OFD.FileName);
                 }
+            }
+        }
+
+        private void LoadDocument(string XmlDocFilename)
+        {
+            textBox1.Text = XmlDocFilename;
+            using (var Fstream = new FileInfo(XmlDocFilename).OpenRead())
+            {
+                XDOC.Load(Fstream);
             }
         }
 
